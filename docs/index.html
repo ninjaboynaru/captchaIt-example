@@ -2,13 +2,16 @@
 	<head>
 		<meta charset='utf-8'>
 		<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+		<link rel='stylesheet' href='./css/style.css'>
 		<title>CaptchaIt</title>
 	</head>
 	<body>
 		<div id='vue-app'>
-			<header>
-				<h1>CaptchaIt</h1>
-				<nav>
+			<header class='site-header'>
+				<div class='site-header__title'>
+					<h1>Captcha It</h1>
+				</div>
+				<nav class='site-header__nav'>
 					<ul>
 						<li v-for='link in links'>
 							<a v-bind:href='link.href'>{{ link.label }}</a>
@@ -17,32 +20,42 @@
 				</nav>
 			</header>
 
-			<main id='vue-app'>
+			<main id='vue-app' class='app'>
 				<div v-html='captcha.data'></div>
 				<p>{{captcha.status}}</p>
-				<form v-on:submit='onCheckCaptcha'>
+				<form v-on:submit='onCheckCaptcha' class='form-input'>
 					<fieldset v-bind:disabled='ui.disableInput'>
 						<input type='text' v-model='captcha.input' required></input>
-						<button type='submit'>Validate</button>
+						<button type='submit' class='button-primary button-primary--small'>Validate</button>
 					</fieldset>
 				</form>
 
-				<form v-on:submit='onNewCaptcha'>
-					<button type='submit'>Request New</button>
-					<label for='width'>Width</label>
-					<input id='width' type='number' step='1' v-model='captcha.width.value' v-bind:min='captcha.width.min' v-bind:max='captcha.width.max'></input>
+				<form v-on:submit='onNewCaptcha' class='form-options'>
+					<button type='submit' class='button-primary'>Request New</button>
+					<div class='form-options__group'>
+						<input id='width' type='number' step='1' v-model='captcha.width.value' v-bind:min='captcha.width.min' v-bind:max='captcha.width.max'></input>
+						<label for='width'>Width</label>
+					</div>
 
-					<label for='height'>Height</label>
-					<input id='height' type='number' step='1' v-model='captcha.height.value' v-bind:min='captcha.height.min' v-bind:max='captcha.height.max'></input>
+					<div class='form-options__group'>
+						<input id='height' type='number' step='1' v-model='captcha.height.value' v-bind:min='captcha.height.min' v-bind:max='captcha.height.max'></input>
+						<label for='height'>Height</label>
+					</div>
 
-					<label for='noise'>Noise</label>
-					<input id='noise' type='number' step='1' v-model='captcha.noise.value' v-bind:min='captcha.noise.min' v-bind:max='captcha.noise.max'></input>
+					<div class='form-options__group'>
+						<input id='noise' type='number' step='1' v-model='captcha.noise.value' v-bind:min='captcha.noise.min' v-bind:max='captcha.noise.max'></input>
+						<label for='noise'>Noise</label>
+					</div>
 
-					<label for='chars'>Chars</label>
-					<input id='chars' type='number' type='number' step='1' v-model='captcha.chars.value' v-bind:min='captcha.chars.min' v-bind:max='captcha.chars.max'></input>
+					<div class='form-options__group'>
+						<input id='chars' type='number' type='number' step='1' v-model='captcha.chars.value' v-bind:min='captcha.chars.min' v-bind:max='captcha.chars.max'></input>
+						<label for='chars'>Chars</label>
+					</div>
 
-					<label for='background'>Background</label>
-					<input id='background' type='color' v-model='captcha.background.value'></input>
+					<div class='form-options__group'>
+						<input id='background' type='color' v-model='captcha.background.value'></input>
+						<label for='background'>Background</label>
+					</div>
 				</form>
 			</main>
 		</div>

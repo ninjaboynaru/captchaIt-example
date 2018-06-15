@@ -1,0 +1,125 @@
+@import 'settings';
+
+
+/******
+** BASE
+*******/
+html, body {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+html {
+	height: 100%;
+	font-size: $base-font-size;
+}
+body {
+	min-height: 100%;
+	color: $color-text;
+	line-height: $global-line-height;
+	font-family: $body-font-family;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $body-font-family;
+}
+
+input {
+	font-family: monospace;
+}
+
+fieldset {
+	border: none;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	color: $color-secondary;
+	&:hover {
+		color: $color-primary;
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+
+
+/********
+** MODULE
+*********/
+.site-header {
+	&__title {
+		h1, h2, h3 {
+			margin: 0;
+		}
+		text-align: center;
+		color: $color-white;
+		background-color: $color-primary;
+		box-shadow: 0 0px 4px 1px $color-secondary;
+	}
+	&__nav {
+		width: 100%;
+		margin: 0 auto;
+		max-width: $global-width-sub;
+		box-shadow: 0 1px 1px 1px rgba($color-secondary, 0.5);
+		border-radius: 0 0 rem-calc(12px) rem-calc(12px);
+
+		ul {
+			list-style: none;
+			display: inline-block;
+			padding: 0;
+			margin: 1rem 0;
+		}
+		li {
+			display: inline-block;
+			margin: 0 1rem;
+		}
+		text-align: center;
+	}
+}
+
+.app {
+	width: 100%;
+	padding: 1rem;
+	max-width: $global-width-sub;
+	margin: 2rem auto;
+}
+
+.button-primary {
+	padding: 0.2rem 0.6rem;
+	border: none;
+	color: $color-white;
+	background-color: $color-primary;
+	border-radius: 0.2rem;
+	font-size: 1rem;
+
+	&--small {
+		font-size: inherit;
+	}
+
+	&:hover {
+		cursor: pointer;
+		background-color: darken($color-primary, 10%);
+	}
+}
+
+
+.form-input {
+}
+
+.form-options {
+	padding: 1rem;
+	border-radius: rem-calc(6px);
+	box-shadow: 0 0 3px 0px $color-dark-gray;
+
+	&__group {
+		margin: 0.5rem 0;
+
+		input {
+			padding: 0.1rem;
+			margin-right: 1rem;
+		}
+	}
+}

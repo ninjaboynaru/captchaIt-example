@@ -1,0 +1,92 @@
+/******
+** BASE
+*******/
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0; }
+
+html {
+  height: 100%;
+  font-size: 120%; }
+
+body {
+  min-height: 100%;
+  color: #545454;
+  line-height: 1.5;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; }
+
+input {
+  font-family: monospace; }
+
+fieldset {
+  border: none;
+  padding: 0; }
+
+a {
+  text-decoration: none;
+  color: #35495e; }
+  a:hover {
+    color: #41b883; }
+
+* {
+  box-sizing: border-box; }
+
+/********
+** MODULE
+*********/
+.site-header__title {
+  text-align: center;
+  color: white;
+  background-color: #41b883;
+  box-shadow: 0 0px 4px 1px #35495e; }
+  .site-header__title h1, .site-header__title h2, .site-header__title h3 {
+    margin: 0; }
+
+.site-header__nav {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 37.5rem;
+  box-shadow: 0 1px 1px 1px rgba(53, 73, 94, 0.5);
+  border-radius: 0 0 0.75rem 0.75rem;
+  text-align: center; }
+  .site-header__nav ul {
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+    margin: 1rem 0; }
+  .site-header__nav li {
+    display: inline-block;
+    margin: 0 1rem; }
+
+.app {
+  width: 100%;
+  padding: 1rem;
+  max-width: 37.5rem;
+  margin: 2rem auto; }
+
+.button-primary {
+  padding: 0.2rem 0.6rem;
+  border: none;
+  color: white;
+  background-color: #41b883;
+  border-radius: 0.2rem;
+  font-size: 1rem; }
+  .button-primary--small {
+    font-size: inherit; }
+  .button-primary:hover {
+    cursor: pointer;
+    background-color: #349268; }
+
+.form-options {
+  padding: 1rem;
+  border-radius: 0.375rem;
+  box-shadow: 0 0 3px 0px #545454; }
+  .form-options__group {
+    margin: 0.5rem 0; }
+    .form-options__group input {
+      padding: 0.1rem;
+      margin-right: 1rem; }

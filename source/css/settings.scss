@@ -1,0 +1,20 @@
+@function rem-calc($size, $base: 16) {
+	$unitless-size: $size / ($size * 0 + 1);
+	$unitless-base: $base / ($base * 0 + 1);
+	@return #{$unitless-size/$unitless-base}rem;
+}
+
+$global-width: rem-calc(800px);
+$global-width-sub: rem-calc(600px);
+$global-line-height: 1.5;
+$base-font-size: 120%;
+$body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+
+$color-primary: #41b883;
+$color-secondary: #35495e;
+$color-white: white;
+$color-black: black;
+$color-light-gray: #f6f6f6;
+$color-dark-gray: #545454;
+
+$color-text: $color-dark-gray;
