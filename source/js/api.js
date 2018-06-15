@@ -1,5 +1,5 @@
 export default (function() {
-	const productionUrl = 'http://localhost:8080/captcha';
+	const productionUrl = 'https://captchait.herokuapp.com/captcha';
 	const developmentUrl = 'http://localhost:8080/captcha';
 	let currentUrl = '';
 
